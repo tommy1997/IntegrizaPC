@@ -21,7 +21,7 @@ namespace ClinicaMedica
 
         private void FrmRegistroClinica_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -41,10 +41,13 @@ namespace ClinicaMedica
 
         private void BtnGuardar_Click_1(object sender, EventArgs e)
         {
-            clinica.RegistroClinica(TxtNombreClinica.Text, TxtRfc.Text, TxtNumConsultorio.Text, TxtCiudad.Text,TxtDireccion.Text, TxtTelefono.Text, TxtEmail.Text, TxtWeb.Text, TxtLogoClinica.Text);
-            this.Hide();
             FrmMedico abrir = new FrmMedico();
+            //FrmRegistroClinica cerrar = new FrmRegistroClinica();
+            clinica.RegistroClinica(TxtNombreClinica.Text, TxtRfc.Text, TxtNumConsultorio.Text, TxtCiudad.Text,TxtDireccion.Text, TxtTelefono.Text, TxtEmail.Text, TxtWeb.Text, TxtLogoClinica.Text);
             abrir.Show();
+            this.Hide();
+            
+            
         }
 
         private void BtnLogotipoClinica_Click(object sender, EventArgs e)

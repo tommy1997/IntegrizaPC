@@ -34,7 +34,12 @@
             this.BtnCancelarPancientes = new System.Windows.Forms.Button();
             this.BtnGuardarPacientes = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CmbTipoSangre = new System.Windows.Forms.ComboBox();
             this.BtnFoto = new System.Windows.Forms.Button();
+            this.TxtFoto = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.TxtCiudad = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.PicFoto = new System.Windows.Forms.PictureBox();
             this.DtpFechaResgisPA = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
@@ -121,11 +126,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.BtnExit = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.TxtCiudad = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.TxtFoto = new System.Windows.Forms.TextBox();
-            this.CmbTipoSangre = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -240,6 +240,17 @@
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             // 
+            // CmbTipoSangre
+            // 
+            this.CmbTipoSangre.FormattingEnabled = true;
+            this.CmbTipoSangre.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.CmbTipoSangre.Location = new System.Drawing.Point(112, 147);
+            this.CmbTipoSangre.Name = "CmbTipoSangre";
+            this.CmbTipoSangre.Size = new System.Drawing.Size(167, 28);
+            this.CmbTipoSangre.TabIndex = 59;
+            // 
             // BtnFoto
             // 
             this.BtnFoto.Location = new System.Drawing.Point(706, 263);
@@ -249,6 +260,38 @@
             this.BtnFoto.Text = "Foto";
             this.BtnFoto.UseVisualStyleBackColor = true;
             this.BtnFoto.Click += new System.EventHandler(this.BtnFoto_Click);
+            // 
+            // TxtFoto
+            // 
+            this.TxtFoto.Location = new System.Drawing.Point(726, 263);
+            this.TxtFoto.Name = "TxtFoto";
+            this.TxtFoto.Size = new System.Drawing.Size(62, 26);
+            this.TxtFoto.TabIndex = 58;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(25, 138);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(65, 40);
+            this.label25.TabIndex = 56;
+            this.label25.Text = "Tipo de \r\nsangre\r\n";
+            // 
+            // TxtCiudad
+            // 
+            this.TxtCiudad.Location = new System.Drawing.Point(428, 89);
+            this.TxtCiudad.Name = "TxtCiudad";
+            this.TxtCiudad.Size = new System.Drawing.Size(169, 26);
+            this.TxtCiudad.TabIndex = 55;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(341, 92);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 20);
+            this.label24.TabIndex = 54;
+            this.label24.Text = "Ciudad";
             // 
             // PicFoto
             // 
@@ -1129,49 +1172,6 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // TxtCiudad
-            // 
-            this.TxtCiudad.Location = new System.Drawing.Point(428, 89);
-            this.TxtCiudad.Name = "TxtCiudad";
-            this.TxtCiudad.Size = new System.Drawing.Size(169, 26);
-            this.TxtCiudad.TabIndex = 55;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(341, 92);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(59, 20);
-            this.label24.TabIndex = 54;
-            this.label24.Text = "Ciudad";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(25, 138);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(65, 40);
-            this.label25.TabIndex = 56;
-            this.label25.Text = "Tipo de \r\nsangre\r\n";
-            // 
-            // TxtFoto
-            // 
-            this.TxtFoto.Location = new System.Drawing.Point(726, 263);
-            this.TxtFoto.Name = "TxtFoto";
-            this.TxtFoto.Size = new System.Drawing.Size(62, 26);
-            this.TxtFoto.TabIndex = 58;
-            // 
-            // CmbTipoSangre
-            // 
-            this.CmbTipoSangre.FormattingEnabled = true;
-            this.CmbTipoSangre.Items.AddRange(new object[] {
-            "M",
-            "F"});
-            this.CmbTipoSangre.Location = new System.Drawing.Point(112, 147);
-            this.CmbTipoSangre.Name = "CmbTipoSangre";
-            this.CmbTipoSangre.Size = new System.Drawing.Size(167, 28);
-            this.CmbTipoSangre.TabIndex = 59;
             // 
             // FrmClinica
             // 

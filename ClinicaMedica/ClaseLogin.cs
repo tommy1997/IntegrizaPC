@@ -10,18 +10,23 @@ namespace ClinicaMedica
     class ClaseLogin
     {
         FrameBD TablaMedico = new FrameBD("localhost", 3306, "root", "admin", "clinica");
-        public void ExistenciaUsuarios(ComboBox CmbExis)
+        public void ExistenciaUsuarios()
         {
            
             try
-            { 
-                string existe = "SELECT COUNT(id_usuario), nickname" +
-                            "FROM usuario ";
+            {
+
+                // TablaMedico = new FrameBD("localhost", 3306, "root", "admin", "clinica");
+
+                string Consulta = "SELECT COUNT(id_clinica) FROM clinica";
+                string contar = "COUNT(id_clinica)";
+                FrmRegistroClinica abrir = new FrmRegistroClinica();
+
+                //TablaMedico.Formularios(Consulta, contar, abrir);
+
+               
 
 
-                CmbExis.DataSource = TablaMedico.SQLCOMBO(existe);
-                CmbExis.DisplayMember = "especialidad";
-                CmbExis.ValueMember = "id_usuario";
             }
             catch (Exception)
             {

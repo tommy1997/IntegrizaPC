@@ -55,11 +55,68 @@ namespace ClinicaMedica
 
         }
 
-        public void mayor()
+
+        public void Buscar()
         {
+            
+        }
+
+        public void FiltroDePacientes(DataGridView DgvPacientes)
+        {
+            try
+            {
+                string filtro = "SELECT id_paciente as ID, nombre as NOMBRE, apellido_pat as 'APELLIDO PATERNO',apellido_mat as 'APELLIDO MATERNO' FROM paciente WHERE `status`='A'";
+                                DgvPacientes.DataSource = TablaPacientes.SQLSEL(filtro);
+                                DgvPacientes.DataMember = "datos";
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("No Se Pudieron Filtrar Los Datos");
+            }
 
         }
 
+        public void FiltroDePacientesBajas(DataGridView DgvPacientesBajas)
+        {
+            try
+            {
+                string filtro = "SELECT id_paciente as ID, nombre as NOMBRE, apellido_pat as 'APELLIDO PATERNO',apellido_mat as 'APELLIDO MATERNO' FROM paciente WHERE `status`='D'";
+                DgvPacientesBajas.DataSource = TablaPacientes.SQLSEL(filtro);
+                DgvPacientesBajas.DataMember = "datos";
+            }
+            catch (Exception)
+            {
 
+                MessageBox.Show("No Se Pudieron Filtrar Los Datos");
+            }
+
+        }
+
+        public void Buscar( DataGridView DgvPacientes, string Nombre, string Apellido)
+        {
+            string BuscarPacientes = "SELECT id_paciente as ID, nombre as NOMBRE, apellido_pat as 'APELLIDO PATERNO',apellido_mat as 'APELLIDO MATERNO' FROM paciente WHERE `status`='A' AND nombre LIKE '%" + Nombre + "%' AND apellido_pat LIKE '%" + Apellido + "%'";
+            DgvPacientes.DataSource = TablaPacientes.SQLSEL(BuscarPacientes);
+            DgvPacientes.DataMember = "datos";
+        }
+
+
+        public void BuscarBajas(DataGridView DgvPacientes, string Nombre, string Apellido)
+        {
+            string BuscarPacientes = "SELECT id_paciente as ID, nombre as NOMBRE, apellido_pat as 'APELLIDO PATERNO',apellido_mat as 'APELLIDO MATERNO' FROM paciente WHERE `status`='D' AND nombre LIKE '%" + Nombre + "%' AND apellido_pat LIKE '%" + Apellido + "%'";
+            DgvPacientes.DataSource = TablaPacientes.SQLSEL(BuscarPacientes);
+            DgvPacientes.DataMember = "datos";
+        }
+
+        ///DAR BAJAS A PACIENTES
+        ///
+        public void DarBajasPacientes(DataGridView DgvPacientesBuscar)
+        {
+
+
+            string DarBaja = "UPDATE paciente SET `status`='D'" +
+                                " WHERE id_paciente='" + Convert.ToString(DgvPacientesBuscar[0, DgvPacientesBuscar.CurrentCellAddress.Y].Value) + "'";
+            TablaPacientes.SQLIDU(DarBaja);
+        }
     }
 }

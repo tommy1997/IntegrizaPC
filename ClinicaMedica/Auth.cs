@@ -20,6 +20,8 @@ namespace ClinicaMedica
         private Boolean statuspass;
         private string UsuarioQueAccede;
         private string NivelUsuarioAccede;
+
+        private string IdMedic;
         private string tabla2;
              
 
@@ -44,7 +46,7 @@ namespace ClinicaMedica
                               " WHERE " + campousuario + "='" + valoruser + "'";*/
 
 
-            string GetDatos = "SELECT " + campousuario + "," + campopass + ",medico.nombre,medico.apellido_pat,medico.apellido_mat, usuario.nivel" +
+            string GetDatos = "SELECT " + campousuario + "," + campopass + ",medico.nombre,medico.apellido_pat,medico.apellido_mat, usuario.nivel,medico.id_medico" +
                          " FROM " + tabla + 
                          " INNER JOIN "+ tabla2 +" ON usuario.id_medico=medico.id_medico"+
                          " WHERE " + campousuario + "='" + valoruser + "'";
@@ -59,6 +61,8 @@ namespace ClinicaMedica
                     string pass= Drus.GetString(1);
                     string usuario = Drus.GetString(2) + " " + Drus.GetString(3) + " " + Drus.GetString(4);
                     string nivel = Drus.GetString(5);
+                    string IdMedico = Drus.GetString(6);
+                    this.IdMedic = IdMedico;
                     this.UsuarioQueAccede = usuario;
                     this.NivelUsuarioAccede = nivel;
 
@@ -108,6 +112,22 @@ namespace ClinicaMedica
             {
                 this.statuspass = value;
             }
+        }
+
+
+        public String MIdMedic
+        {
+            get
+            {
+                return this.IdMedic;
+            }
+
+            set
+            {
+                this.IdMedic = value;
+            }
+
+
         }
 
         public String QueUsuarioAccede

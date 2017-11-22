@@ -15,6 +15,12 @@ namespace ClinicaMedica
         public Agenda()
         {
             InitializeComponent();
+
+
+
+
+
+
         }
 
         private void Agenda_Load(object sender, EventArgs e)
@@ -27,10 +33,11 @@ namespace ClinicaMedica
 
         }
 
-        public void DatosAcceso(string user, string nivel)
+        public void DatosAcceso(string user, string nivel,string Id)
         {
            this.LblNombre.Text = user;
            this.LblNivel.Text = nivel;
+           this.LblIdMedico.Text = Id;
         }
 
         private void BtnNuevo_Click(object sender, EventArgs e)
@@ -210,6 +217,27 @@ namespace ClinicaMedica
             Button btn = sender as Button;
             btn.BackColor = Color.LightSlateGray;
             btn.ForeColor = Color.White;
+        }
+
+        private void BtnConfigurar_Click(object sender, EventArgs e)
+        {
+            FrmConfigurar abrir = new FrmConfigurar();
+            abrir.TxtNombreMedico.Text = LblNombre.Text;
+            abrir.LblIdMedicoConf.Text = LblIdMedico.Text;
+            abrir.ShowDialog();
+
+            
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            FrmBuscarPacientes abrir = new FrmBuscarPacientes();
+            abrir.ShowDialog();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
         

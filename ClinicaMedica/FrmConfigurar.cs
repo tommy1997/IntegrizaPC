@@ -12,6 +12,8 @@ namespace ClinicaMedica
 {
     public partial class FrmConfigurar : Form
     {
+
+        ClaseConfig configurar = new ClaseConfig();
         public FrmConfigurar()
         {
             InitializeComponent();
@@ -31,5 +33,31 @@ namespace ClinicaMedica
         {
 
         }
+
+        private void FrmConfigurar_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BtnGuardarConfig_Click(object sender, EventArgs e)
+        {
+            if (TxtContraseniaNueva.Text==TxtRepetirContrasenia.Text)
+            {
+                configurar.ActualizarUser(TxtNickname.Text, TxtRepetirContrasenia.Text, LblIdMedicoConf.Text);
+                MessageBox.Show("La Contraseña Ha Sido Modificada Es Necesario Iniciar Sesión De Nuevo");
+                
+                FrmLogin abrir = new FrmLogin();
+                abrir.ShowDialog();
+                this.Hide();
+
+
+            }
+
+            else
+            {
+                MessageBox.Show("La Contraseña No Coincide");
+            }
+        }
+       
     }
 }

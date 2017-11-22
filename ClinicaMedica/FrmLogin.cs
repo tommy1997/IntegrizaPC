@@ -17,31 +17,13 @@ namespace ClinicaMedica
             InitializeComponent();
         }
         ClaseLogin procesos = new ClaseLogin(); 
-        FrameBD TablaMedico = new FrameBD("localhost", 3306, "root", "admin", "clinica");
+        
+
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-           
-            procesos.ExistenciaUsuarios(CmbExiste);
-
-
-            string se = "SELECT nombre FROM pacientes";
-            TablaMedico.sqlreader(se);
-
-          /*  if (Convert.ToInt32(CmbExiste.SelectedItem) > 0)
-            {
-
-            }
-            else
-            {
-                this.Hide();
-               FrmRegistroClinica abrir = new FrmRegistroClinica();
-               abrir.Show();
-                
-            }*/
-
-            
+                     
         }
 
      
@@ -81,7 +63,7 @@ namespace ClinicaMedica
 
                     Agenda ab = new Agenda();
 
-                    ab.DatosAcceso(user.QueUsuarioAccede, user.QueNivelUsuarioAccede);
+                    ab.DatosAcceso(user.QueUsuarioAccede, user.QueNivelUsuarioAccede,user.MIdMedic);
                     ab.Show();
                     this.Hide();
 

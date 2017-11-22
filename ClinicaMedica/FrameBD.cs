@@ -9,6 +9,7 @@ using System.Configuration;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data;
+using System.Windows.Forms;
 namespace ClinicaMedica
 
 {
@@ -182,6 +183,48 @@ namespace ClinicaMedica
               MessageBox.Show(Convert.ToString(leer));
           }
            return leer;
+      }
+
+
+      public void Formularios(string SQL, string Contar, Form opcion1, Form opcion2)
+      {
+
+
+
+   //    MySqlConnection conectando = new MySqlConnection();
+
+        //string Miconexion = "Server=localhost;Database=clinica;User Id=root;Password=admin";
+
+      //  conectando.ConnectionString = Miconexion;
+       // conectando.Open();
+
+          conectar();
+          //MessageBox.Show("CONECTADO");
+          //string Consulta = "SELECT COUNT(id_cita) FROM cita";
+          MySqlCommand consul = new MySqlCommand();
+          consul.Connection = conex;
+          consul.CommandText = SQL;
+
+          MySqlDataReader leer = consul.ExecuteReader();
+
+          leer.Read();
+          if (Convert.ToInt32(leer[Contar]) == 0)
+          {
+
+              //MessageBox.Show("hola");
+
+              opcion1.Show();
+
+          }
+          else
+          {
+              opcion2.ShowDialog();
+          }
+
+
+
+
+
       }
 
     }

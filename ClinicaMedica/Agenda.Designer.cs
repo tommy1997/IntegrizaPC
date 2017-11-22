@@ -32,7 +32,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelUser = new System.Windows.Forms.Panel();
             this.LblNombre = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LblHora = new System.Windows.Forms.Label();
@@ -41,6 +41,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.LblNivel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.LblIdMedico = new System.Windows.Forms.Label();
             this.BtnConfigurar = new System.Windows.Forms.Button();
             this.BtnCerrarS = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
@@ -51,9 +53,8 @@
             this.BtnTurnos = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.BtnNuevo = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.PanelUser.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -77,6 +78,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1038, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // archivoToolStripMenuItem
             // 
@@ -84,14 +86,14 @@
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
-            // panel1
+            // PanelUser
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.LblNombre);
-            this.panel1.Location = new System.Drawing.Point(12, 124);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(449, 30);
-            this.panel1.TabIndex = 11;
+            this.PanelUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PanelUser.Controls.Add(this.LblNombre);
+            this.PanelUser.Location = new System.Drawing.Point(12, 124);
+            this.PanelUser.Name = "PanelUser";
+            this.PanelUser.Size = new System.Drawing.Size(449, 30);
+            this.PanelUser.TabIndex = 11;
             // 
             // LblNombre
             // 
@@ -99,9 +101,8 @@
             this.LblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNombre.Location = new System.Drawing.Point(3, 3);
             this.LblNombre.Name = "LblNombre";
-            this.LblNombre.Size = new System.Drawing.Size(64, 20);
+            this.LblNombre.Size = new System.Drawing.Size(0, 20);
             this.LblNombre.TabIndex = 0;
-            this.LblNombre.Text = "Usuario";
             // 
             // panel2
             // 
@@ -164,6 +165,17 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // LblIdMedico
+            // 
+            this.LblIdMedico.AutoSize = true;
+            this.LblIdMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblIdMedico.Location = new System.Drawing.Point(942, 61);
+            this.LblIdMedico.Name = "LblIdMedico";
+            this.LblIdMedico.Size = new System.Drawing.Size(64, 20);
+            this.LblIdMedico.TabIndex = 1;
+            this.LblIdMedico.Text = "Usuario";
+            this.LblIdMedico.Visible = false;
+            // 
             // BtnConfigurar
             // 
             this.BtnConfigurar.BackColor = System.Drawing.Color.LightSlateGray;
@@ -177,6 +189,7 @@
             this.BtnConfigurar.TabIndex = 17;
             this.toolTip1.SetToolTip(this.BtnConfigurar, "Configuraciones");
             this.BtnConfigurar.UseVisualStyleBackColor = false;
+            this.BtnConfigurar.Click += new System.EventHandler(this.BtnConfigurar_Click);
             this.BtnConfigurar.DragEnter += new System.Windows.Forms.DragEventHandler(this.button1_DragEnter);
             this.BtnConfigurar.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.BtnConfigurar.MouseLeave += new System.EventHandler(this.BtnConfigurar_MouseLeave);
@@ -318,6 +331,7 @@
             this.BtnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip1.SetToolTip(this.BtnBuscar, "Buscar");
             this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             this.BtnBuscar.MouseEnter += new System.EventHandler(this.BtnBuscar_MouseEnter);
             this.BtnBuscar.MouseLeave += new System.EventHandler(this.BtnBuscar_MouseLeave);
             // 
@@ -345,12 +359,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 518);
+            this.Controls.Add(this.LblIdMedico);
             this.Controls.Add(this.BtnConfigurar);
             this.Controls.Add(this.BtnCerrarS);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PanelUser);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnAyuda);
             this.Controls.Add(this.BtnBackup);
@@ -368,8 +383,8 @@
             this.Load += new System.EventHandler(this.Agenda_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.PanelUser.ResumeLayout(false);
+            this.PanelUser.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -394,10 +409,8 @@
         private System.Windows.Forms.Button BtnBackup;
         private System.Windows.Forms.Button BtnAyuda;
         private System.Windows.Forms.Button BtnSalir;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label LblNombre;
         private System.Windows.Forms.Label LblHora;
         private System.Windows.Forms.Label LblFecha;
         private System.Windows.Forms.Panel panel4;
@@ -406,6 +419,9 @@
         private System.Windows.Forms.Button BtnCerrarS;
         private System.Windows.Forms.Button BtnConfigurar;
         private System.Windows.Forms.ToolTip toolTip1;
+        public System.Windows.Forms.Panel PanelUser;
+        public System.Windows.Forms.Label LblNombre;
+        private System.Windows.Forms.Label LblIdMedico;
 
     }
 }

@@ -42,6 +42,7 @@ namespace ClinicaMedica
 
         private void button2_Click(object sender, EventArgs e)
         {
+            procesos.EliminarClinica(CmbClinicaLogin);
             TxtNombre.Clear();
             TxtApellidoPat.Clear();
             TxtApellidoMat.Clear();
@@ -57,12 +58,24 @@ namespace ClinicaMedica
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            
-            GbResgistro.Visible = true;
-            procesos.agregarmedico(CmbEspecial, TxtNombre.Text, TxtApellidoPat.Text, TxtApellidoMat.Text, TxtCedula.Text, DtpFechaNaciemiento, TxtEdad.Text, CmbGenero, TxtCurp.Text, TxtRFC.Text, TxtDireccion.Text, TxtTelcel.Text, TxtEmail.Text, TxtLogo.Text);
+
+
+            procesos.agregarmedico(CmbEspecial, TxtNombre.Text, TxtApellidoPat.Text, TxtApellidoMat.Text, TxtCedula.Text, DtpFechaNaciemiento, TxtEdad.Text, CmbGenero, TxtCurp.Text, TxtRFC.Text, TxtDireccion.Text, TxtTelcel.Text, TxtEmail.Text, TxtLogo.Text, GbResgistro);
             procesos.FiltroClinica(CmbClinicaLogin);
             procesos.FiltroMedico(CmbMedicosFil);
+            //GbResgistro.Visible = true;
+
+            TxtNombre.Clear();
+            TxtApellidoPat.Clear();
+            TxtApellidoMat.Clear();
+            TxtEdad.Clear();
+            TxtCurp.Clear();
+            TxtRFC.Clear();
+            TxtDireccion.Clear();
+            TxtTelcel.Clear();
+            TxtEmail.Clear();
             
+
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -84,6 +97,17 @@ namespace ClinicaMedica
         {
             TxtUsuario.Clear();
             TxtContrasenia.Clear();
+
+            TxtNombre.Clear();
+            TxtApellidoPat.Clear();
+            TxtApellidoMat.Clear();
+            TxtEdad.Clear();
+            TxtCurp.Clear();
+            TxtRFC.Clear();
+            TxtDireccion.Clear();
+            TxtTelcel.Clear();
+            TxtEmail.Clear();
+
             procesos.EliminarMedico(CmbMedicosFil);
             GbResgistro.Visible = false;
         }

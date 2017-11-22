@@ -71,6 +71,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="FrameBD.cs" />
+    <Compile Include="FrmBuscarPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarPacientes.Designer.cs">
+      <DependentUpon>FrmBuscarPacientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmClinicaPsicologia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,17 +95,17 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMDI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMDI.Designer.cs">
-      <DependentUpon>FrmMDI.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmRegistroClinica.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRegistroClinica.Designer.cs">
       <DependentUpon>FrmRegistroClinica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Iniciar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Iniciar.Designer.cs">
+      <DependentUpon>Iniciar.cs</DependentUpon>
     </Compile>
     <Compile Include="Medico.cs">
       <SubType>Form</SubType>
@@ -115,6 +121,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarPacientes.resx">
+      <DependentUpon>FrmBuscarPacientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmClinicaPsicologia.resx">
       <DependentUpon>FrmClinicaPsicologia.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,11 +133,11 @@
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMDI.resx">
-      <DependentUpon>FrmMDI.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistroClinica.resx">
       <DependentUpon>FrmRegistroClinica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Iniciar.resx">
+      <DependentUpon>Iniciar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medico.resx">
       <DependentUpon>Medico.cs</DependentUpon>
@@ -224,6 +233,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\organizer_calendar_clock_pencil_10047.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\izamalito.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

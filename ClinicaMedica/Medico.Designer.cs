@@ -64,17 +64,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BtnCancelarRegistro = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.CmbMedicosFil = new System.Windows.Forms.ComboBox();
+            this.CmbClinicaLogin = new System.Windows.Forms.ComboBox();
+            this.BtnCancelarRegistro = new System.Windows.Forms.Button();
             this.BtnGuardarRegistro = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.TxtContrasenia = new System.Windows.Forms.TextBox();
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.GbResgistro = new System.Windows.Forms.GroupBox();
-            this.CmbClinicaLogin = new System.Windows.Forms.ComboBox();
-            this.CmbMedicosFil = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicImagen)).BeginInit();
@@ -449,21 +449,10 @@
             this.groupBox2.TabIndex = 62;
             this.groupBox2.TabStop = false;
             // 
-            // BtnCancelarRegistro
-            // 
-            this.BtnCancelarRegistro.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnCancelarRegistro.Location = new System.Drawing.Point(56, 316);
-            this.BtnCancelarRegistro.Name = "BtnCancelarRegistro";
-            this.BtnCancelarRegistro.Size = new System.Drawing.Size(117, 40);
-            this.BtnCancelarRegistro.TabIndex = 68;
-            this.BtnCancelarRegistro.Text = "Cancelar";
-            this.BtnCancelarRegistro.UseVisualStyleBackColor = true;
-            this.BtnCancelarRegistro.Click += new System.EventHandler(this.BtnCancelarRegistro_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Location = new System.Drawing.Point(21, 25);
+            this.groupBox3.Location = new System.Drawing.Point(24, 26);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(356, 75);
             this.groupBox3.TabIndex = 67;
@@ -479,6 +468,37 @@
             this.label19.Size = new System.Drawing.Size(158, 33);
             this.label19.TabIndex = 68;
             this.label19.Text = "Registrate";
+            // 
+            // CmbMedicosFil
+            // 
+            this.CmbMedicosFil.FormattingEnabled = true;
+            this.CmbMedicosFil.Items.AddRange(new object[] {
+            "Otro"});
+            this.CmbMedicosFil.Location = new System.Drawing.Point(85, 72);
+            this.CmbMedicosFil.Name = "CmbMedicosFil";
+            this.CmbMedicosFil.Size = new System.Drawing.Size(50, 28);
+            this.CmbMedicosFil.TabIndex = 70;
+            // 
+            // CmbClinicaLogin
+            // 
+            this.CmbClinicaLogin.FormattingEnabled = true;
+            this.CmbClinicaLogin.Items.AddRange(new object[] {
+            "Otro"});
+            this.CmbClinicaLogin.Location = new System.Drawing.Point(39, 71);
+            this.CmbClinicaLogin.Name = "CmbClinicaLogin";
+            this.CmbClinicaLogin.Size = new System.Drawing.Size(38, 28);
+            this.CmbClinicaLogin.TabIndex = 69;
+            // 
+            // BtnCancelarRegistro
+            // 
+            this.BtnCancelarRegistro.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnCancelarRegistro.Location = new System.Drawing.Point(56, 316);
+            this.BtnCancelarRegistro.Name = "BtnCancelarRegistro";
+            this.BtnCancelarRegistro.Size = new System.Drawing.Size(117, 40);
+            this.BtnCancelarRegistro.TabIndex = 68;
+            this.BtnCancelarRegistro.Text = "Cancelar";
+            this.BtnCancelarRegistro.UseVisualStyleBackColor = true;
+            this.BtnCancelarRegistro.Click += new System.EventHandler(this.BtnCancelarRegistro_Click);
             // 
             // BtnGuardarRegistro
             // 
@@ -531,33 +551,13 @@
             // GbResgistro
             // 
             this.GbResgistro.Controls.Add(this.groupBox2);
-            this.GbResgistro.Location = new System.Drawing.Point(299, -3);
+            this.GbResgistro.Location = new System.Drawing.Point(322, 3);
             this.GbResgistro.Name = "GbResgistro";
             this.GbResgistro.Size = new System.Drawing.Size(440, 430);
             this.GbResgistro.TabIndex = 66;
             this.GbResgistro.TabStop = false;
             this.GbResgistro.Visible = false;
             this.GbResgistro.Enter += new System.EventHandler(this.GbResgistro_Enter);
-            // 
-            // CmbClinicaLogin
-            // 
-            this.CmbClinicaLogin.FormattingEnabled = true;
-            this.CmbClinicaLogin.Items.AddRange(new object[] {
-            "Otro"});
-            this.CmbClinicaLogin.Location = new System.Drawing.Point(39, 71);
-            this.CmbClinicaLogin.Name = "CmbClinicaLogin";
-            this.CmbClinicaLogin.Size = new System.Drawing.Size(38, 28);
-            this.CmbClinicaLogin.TabIndex = 69;
-            // 
-            // CmbMedicosFil
-            // 
-            this.CmbMedicosFil.FormattingEnabled = true;
-            this.CmbMedicosFil.Items.AddRange(new object[] {
-            "Otro"});
-            this.CmbMedicosFil.Location = new System.Drawing.Point(85, 72);
-            this.CmbMedicosFil.Name = "CmbMedicosFil";
-            this.CmbMedicosFil.Size = new System.Drawing.Size(50, 28);
-            this.CmbMedicosFil.TabIndex = 70;
             // 
             // FrmMedico
             // 

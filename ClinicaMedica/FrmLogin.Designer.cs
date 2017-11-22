@@ -36,7 +36,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.CmbExiste = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -125,22 +124,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Usuario";
             // 
-            // CmbExiste
-            // 
-            this.CmbExiste.FormattingEnabled = true;
-            this.CmbExiste.Location = new System.Drawing.Point(12, 22);
-            this.CmbExiste.Name = "CmbExiste";
-            this.CmbExiste.Size = new System.Drawing.Size(10, 21);
-            this.CmbExiste.TabIndex = 2;
-            this.CmbExiste.Visible = false;
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ClinicaMedica.Properties.Resources.Fondo;
             this.ClientSize = new System.Drawing.Size(391, 395);
-            this.Controls.Add(this.CmbExiste);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -163,6 +152,5 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox CmbExiste;
     }
 }

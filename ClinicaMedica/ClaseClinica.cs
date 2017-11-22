@@ -18,11 +18,13 @@ namespace ClinicaMedica
                 string clinica = "INSERT INTO clinica(nombre_clinica,RFC,num_consultorio,ciudad,direccion,telefono,email,web,logotipo) VALUES('" + NombreClinic + "','" + RFC + "','" + numclinic + "','" + ciudad + "','" + direccion + "','" + telefono + "','" + email + "','" + web + "','" + logotipo + "')";
                 TablaClinica.SQLIDU(clinica);
                 MessageBox.Show("Datos Registrados");
+                
+               
             }
             catch (Exception)
             {
 
-                MessageBox.Show("No se puede guardar los datos");
+                MessageBox.Show("No se a podido guardar los datos por favor verifique que los campos esten llenos correctamente");
             }
             
         }

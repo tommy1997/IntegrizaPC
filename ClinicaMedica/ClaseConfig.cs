@@ -9,6 +9,13 @@ namespace ClinicaMedica
     class ClaseConfig
     {
         FrameBD user = new FrameBD("localhost", 3306, "root", "admin", "clinica");
+
+        public void TraerDoctor()
+        {
+           // string Dortor="SELECT "
+        }
+
+
         public void ActualizarUser(string nickname,string pass, string iduser)
         {
             string Actualizar =  "UPDATE usuario SET nickname='"+nickname+"', password='"+pass+"'"+

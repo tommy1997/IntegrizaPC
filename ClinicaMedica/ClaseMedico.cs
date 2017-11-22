@@ -11,7 +11,7 @@ namespace ClinicaMedica
     {
         FrameBD TablaMedico = new FrameBD("localhost", 3306, "root", "admin", "clinica");
 
-        public void agregarmedico(ComboBox idespecialidad, string Nombre, string ApellidoP, string ApellidoM, string Cedulaprof, DateTimePicker FechaNacimiento,string Edad, ComboBox CmbGen, string curp, string RFC, string dirrecion, string telefono, string imail, string logo)
+        public void agregarmedico(ComboBox idespecialidad, string Nombre, string ApellidoP, string ApellidoM, string Cedulaprof, DateTimePicker FechaNacimiento,string Edad, ComboBox CmbGen, string curp, string RFC, string dirrecion, string telefono, string imail, string logo, GroupBox Res)
         {
            try
             {
@@ -19,6 +19,7 @@ namespace ClinicaMedica
                 TablaMedico.SQLIDU(AddMedico);
 
                 MessageBox.Show("Datos Ingresados Correctamente");
+                Res.Visible = true;
             }
             catch (Exception)
             {
@@ -88,7 +89,7 @@ namespace ClinicaMedica
             try
             {
                 string clinica = "SELECT * " +
-                                       " FROM clinica ";
+                                       " FROM clinica";
 
                 CmbClinicaLogin.DataSource = TablaMedico.SQLCOMBO(clinica);
                 CmbClinicaLogin.DisplayMember = "nombre_clinica";
@@ -139,10 +140,18 @@ namespace ClinicaMedica
         {
             string Eliminar = "DELETE FROM medico WHERE id_medico = '"+CmbIdmedico.SelectedValue+"'";
             TablaMedico.SQLIDU(Eliminar);
+
+
             /*string Eliminaruser = "DELETE FROM usuario WHERE id_medico = '" + CmbIdmedico.ValueMember + "'";
             TablaMedico.SQLIDU(Eliminaruser);*/
 
 
+        }
+
+        public void EliminarClinica(ComboBox CmbIdClinica)
+        {
+            string Eliminar = "DELETE FROM clinica WHERE id_clinica='" + CmbIdClinica.SelectedValue + "'";
+            TablaMedico.SQLIDU(Eliminar);
         }
 
 
